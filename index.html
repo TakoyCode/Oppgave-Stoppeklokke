@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave - Stoppeklokke</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="circle container">
+        <!-- Diven vi endrer til "seconds" -->
+        <div id="time" class="timebox">Filler Tekst</div>
+        <!-- Knappene som kaller på funksjonene  -->
+        <div class="buttons">
+            <button onclick="startTime()">Start tid</button>
+            <button onclick="lapTime()">Runde tider</button>
+            <button onclick="stopTime()">Stoppe tiden</button>
+            <button onclick="blankTime()">Blanke ut og stoppe tiden</button>
+        </div>
+        <div class="laptimediv">
+            <!-- skrift som forklarer -->
+            <div>Runde tidene:</div>
+            <!-- Diven som holder "laptime" divene -->
+            <div id="laptimes" class="laptimebox"></div>
+        </div>
+    </div>
+
+    <script>
+
+        // holder tiden
+        let seconds = 0;
+        var timer;
+
+        //kaller den opp på load som at "0" blir vist og ikke "Filler Tekst" 
+        showTime();
+
+        //starter timern
+        function startTime() {
+            timer = setInterval(addTime, 1000);
+        }
+
+        //lager en ny div inni "laptimes" som har tiden når du trykket inni seg
+        function lapTime() {
+            document.getElementById('laptimes').innerHTML += /*html*/ `<div> ${seconds - 1} </div>`
+            seconds = 0;
+        }
+
+        //Refresher siden, så den "stopper" timer'n
+        function stopTime() {
+            clearInterval(timer);
+        }
+
+        function blankTime() {
+            location.reload();
+        }
+
+        //Er hva vi kaller på for å legge til tid i "seconds"
+        function addTime() {
+            showTime();
+            seconds++;
+        }
+
+        //Gjør innerhtml i "time" diven til "seconds", som holder tiden til timer'n
+        function showTime() {
+            document.getElementById('time').innerHTML = seconds;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

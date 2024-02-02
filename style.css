@@ -1,0 +1,49 @@
+.circle {
+    background-color: gray;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15%;
+}
+
+.timebox {
+    border: 3px solid black;
+    width: 40px;
+    height: 20px;
+
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40%;
+}
+
+.laptimediv {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35%;
+}
+
+.laptimebox {
+    border: 3px solid black;
+    width: 100px;
+    height: 105px;
+}
